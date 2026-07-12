@@ -1,0 +1,18 @@
+{
+  "title": "Producto de Prueba",
+  "sku": "PROD-001",
+  "description": "Esta es una descripción corta para el producto de prueba.",
+  "mainImage": "/uploads/producto-test.png",
+  "category": "General",
+  "specs": [
+    {
+      "key": "Material",
+      "value": "Aluminio"
+    },
+    {
+      "key": "Peso",
+      "value": "1.5 kg"
+    }
+  ],
+  "featured": true
+}

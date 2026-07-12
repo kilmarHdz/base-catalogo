@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+      if (getTheme() === 'dark') document.documentElement.classList.add('dark');
+    </script>
+  </head>
+  <body class="bg-brand-background text-brand-primary min-h-screen transition-colors duration-300">
+    <slot />
+  </body>
+</html>

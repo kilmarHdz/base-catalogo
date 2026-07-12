@@ -6,12 +6,22 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "pnpm exec tinacms dev -c \"pnpm exec astro dev\"",
+    "build": "pnpm exec tinacms build && pnpm exec astro build",
+    "preview": "pnpm exec astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.0.7"
+    "@astrojs/node": "^11.0.2",
+    "@astrojs/vue": "^7.0.1",
+    "@tailwindcss/vite": "^4.3.2",
+    "@tinacms/astro": "^0.5.1",
+    "astro": "^7.0.7",
+    "tailwindcss": "^4.3.2",
+    "tinacms": "^3.10.0",
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^2.5.3"
   }
 }

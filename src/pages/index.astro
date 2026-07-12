@@ -1,17 +1,18 @@
 ---
-
+import LayoutPrincipal from '../layouts/LayoutPrincipal.astro';
+import ThemeToggle from '../components/vue/ThemeToggle.vue';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<LayoutPrincipal title="Boilerplate Catálogo Base">
+  <header class="p-4 border-b border-brand-border flex justify-between items-center bg-brand-surface">
+    <span class="font-bold text-xl">Catálogo Estándar</span>
+    <ThemeToggle client:load />
+  </header>
+  
+  <main class="max-w-4xl mx-auto mt-10 p-6 bg-brand-surface rounded-xl border border-brand-border shadow-sm">
+    <h1 class="text-3xl font-extrabold mb-4 text-brand-accent">Entorno Verificado</h1>
+    <p class="text-brand-secondary">
+      Si puedes ver este diseño, cambiar entre modo Día/Noche con el botón de Vue, y leer esto, tu arquitectura base está lista.
+    </p>
+  </main>
+</LayoutPrincipal>
