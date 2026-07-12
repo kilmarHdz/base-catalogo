@@ -1,0 +1,14 @@
+{
+  "title": "Set Cubiertos 3 en 1 Envueltos",
+  "sku": "CUB-SET-3X1",
+  "description": "Set individual de cubiertos desechables (cuchillo, tenedor y cuchara) envueltos en bolsa de celofán. Incluye servilleta de papel. Ideales para servicio de comida rápida, delivery, eventos y cantinas.",
+  "mainImage": "/uploads/cubiertos-set-3en1.png",
+  "category": "Cubiertos Desechables",
+  "specs": [
+    { "key": "Material", "value": "Polipropileno (PP)" },
+    { "key": "Incluye", "value": "Cuchillo, tenedor, cuchara y servilleta" },
+    { "key": "Color", "value": "Blanco" },
+    { "key": "Presentación", "value": "Caja de 50 sets" }
+  ],
+  "featured": true
+}

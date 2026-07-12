@@ -1,0 +1,15 @@
+{
+  "title": "Plato Hondo Desechable 500ml",
+  "sku": "PLA-HON-500",
+  "description": "Plato hondo plástico de alta resistencia, ideal para sopas, caldos, postres y alimentos calientes. Soporta temperaturas elevadas sin deformarse. Perfecto para restaurantes, comedores y servicios de catering.",
+  "mainImage": "/uploads/plato-hondo.png",
+  "category": "Platos y Bandejas",
+  "specs": [
+    { "key": "Material", "value": "Polipropileno (PP)" },
+    { "key": "Capacidad", "value": "500 ml" },
+    { "key": "Diámetro", "value": "18 cm" },
+    { "key": "Temperatura máx.", "value": "100°C" },
+    { "key": "Presentación", "value": "Paquete de 12 unidades" }
+  ],
+  "featured": true
+}

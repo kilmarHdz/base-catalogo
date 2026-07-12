@@ -1,0 +1,15 @@
+{
+  "title": "Sorbetes Plásticos Colores x500",
+  "sku": "OTR-SOR-500",
+  "description": "Sorbetes (pajitas/popotes) plásticos de colores surtidos. Flexibles y resistentes, perfectos para jugos, refrescos, batidos y bebidas frías. Ideales para restaurantes, cafeterías y eventos infantiles.",
+  "mainImage": "/uploads/sorbetes-colores.png",
+  "category": "Otros",
+  "specs": [
+    { "key": "Material", "value": "Polipropileno (PP)" },
+    { "key": "Longitud", "value": "21 cm" },
+    { "key": "Diámetro", "value": "6 mm" },
+    { "key": "Color", "value": "Surtido (rojo, azul, verde, amarillo)" },
+    { "key": "Presentación", "value": "Bolsa de 500 unidades" }
+  ],
+  "featured": true
+}

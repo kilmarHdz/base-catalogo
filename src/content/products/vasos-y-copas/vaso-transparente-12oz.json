@@ -1,0 +1,14 @@
+{
+  "title": "Vaso Desechable Transparente 12oz",
+  "sku": "VAS-TRA-12",
+  "description": "Vaso plástico transparente de 12 onzas, ideal para bebidas frías, jugos, aguas y refrescos. Resistente y ligero, apto para uso en restaurantes, ferias y eventos masivos.",
+  "mainImage": "/uploads/vaso-transparente-12oz.png",
+  "category": "Vasos y Copas",
+  "specs": [
+    { "key": "Material", "value": "PET Reciclable" },
+    { "key": "Capacidad", "value": "12 Onzas (354 ml)" },
+    { "key": "Presentación", "value": "Paquete de 25 unidades" },
+    { "key": "Temperatura", "value": "Bebidas frías" }
+  ],
+  "featured": false
+}

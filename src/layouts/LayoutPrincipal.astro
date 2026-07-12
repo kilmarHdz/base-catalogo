@@ -1,9 +1,14 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import CartDrawer from '../components/vue/CartDrawer.vue';
+
 interface Props {
   title: string;
+  description?: string;
 }
-const { title } = Astro.props;
+const { title, description = "Catálogo corporativo premium autogestionable con TinaCMS y Astro." } = Astro.props;
 ---
 
 <!doctype html>
@@ -12,6 +17,13 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
     <script is:inline>
       const getTheme = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -22,7 +34,12 @@ const { title } = Astro.props;
       if (getTheme() === 'dark') document.documentElement.classList.add('dark');
     </script>
   </head>
-  <body class="bg-brand-background text-brand-primary min-h-screen transition-colors duration-300">
-    <slot />
+  <body class="bg-brand-background text-brand-primary min-h-screen flex flex-col justify-between transition-colors duration-300">
+    <Navbar />
+    <div class="flex-grow pt-28">
+      <slot />
+    </div>
+    <Footer />
+    <CartDrawer client:load />
   </body>
 </html>

@@ -1,0 +1,22 @@
+{
+  "title": "Copa de Cristal Plástica 5oz",
+  "sku": "VAS-COP-05",
+  "description": "Copa plástica rígida transparente de alta calidad, perfecta para banquetes, bodas, catering y eventos corporativos. Aporta elegancia con la practicidad de un desechable.",
+  "mainImage": "/uploads/copa-cristal.png",
+  "category": "Vasos y Copas",
+  "specs": [
+    {
+      "key": "Material",
+      "value": "Poliestireno Rígido (PS)"
+    },
+    {
+      "key": "Capacidad",
+      "value": "5 Onzas (150 ml)"
+    },
+    {
+      "key": "Presentación",
+      "value": "Paquete de 20 unidades"
+    }
+  ],
+  "featured": true
+}

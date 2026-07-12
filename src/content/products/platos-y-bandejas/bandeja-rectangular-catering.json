@@ -1,0 +1,15 @@
+{
+  "title": "Bandeja Rectangular para Catering #3",
+  "sku": "PLA-BAN-R3",
+  "description": "Bandeja rectangular plástica rígida, resistente y estable, ideal para presentar y transportar alimentos en eventos, ferias gastronómicas y servicios de catering. Disponible con o sin tapa.",
+  "mainImage": "/uploads/bandeja-rectangular.png",
+  "category": "Platos y Bandejas",
+  "specs": [
+    { "key": "Material", "value": "Poliestireno (PS)" },
+    { "key": "Dimensiones", "value": "35 x 24 cm" },
+    { "key": "Color", "value": "Blanco / Negro" },
+    { "key": "Incluye tapa", "value": "Opcional" },
+    { "key": "Presentación", "value": "Paquete de 10 unidades" }
+  ],
+  "featured": false
+}

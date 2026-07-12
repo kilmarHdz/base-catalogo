@@ -1,0 +1,15 @@
+{
+  "title": "Pote Redondo con Tapa 1 Litro",
+  "sku": "ENV-POT-1LT",
+  "description": "Pote redondo plástico transparente con tapa a presión. Perfecto para envasar sopas, cremas, salsas y alimentos líquidos. Alta resistencia a la temperatura y al impacto. Reutilizable.",
+  "mainImage": "/uploads/pote-redondo-1lt.png",
+  "category": "Envases y Contenedores",
+  "specs": [
+    { "key": "Material", "value": "PET Transparente" },
+    { "key": "Capacidad", "value": "1 Litro (1000 ml)" },
+    { "key": "Forma", "value": "Redondo" },
+    { "key": "Tapa", "value": "Incluida, cierre a presión" },
+    { "key": "Presentación", "value": "Paquete de 6 unidades" }
+  ],
+  "featured": false
+}

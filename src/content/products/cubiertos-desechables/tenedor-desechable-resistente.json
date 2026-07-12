@@ -1,0 +1,14 @@
+{
+  "title": "Tenedor Desechable Resistente",
+  "sku": "CUB-TEN-STD",
+  "description": "Tenedor desechable de polipropileno de alta resistencia. Diseño ergonómico con dientes reforzados que soportan alimentos sólidos sin romperse. Ideal para restaurantes, comedores y servicios de comida.",
+  "mainImage": "/uploads/tenedor-desechable.png",
+  "category": "Cubiertos Desechables",
+  "specs": [
+    { "key": "Material", "value": "Polipropileno (PP)" },
+    { "key": "Longitud", "value": "16 cm" },
+    { "key": "Color", "value": "Blanco / Negro" },
+    { "key": "Presentación", "value": "Bolsa de 100 unidades" }
+  ],
+  "featured": false
+}

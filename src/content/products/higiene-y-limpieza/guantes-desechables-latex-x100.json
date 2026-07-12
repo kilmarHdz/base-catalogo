@@ -1,0 +1,15 @@
+{
+  "title": "Guantes Desechables de Látex Caja x100",
+  "sku": "HIG-GUA-LAT",
+  "description": "Guantes desechables de látex sin polvo para uso médico, alimentario y de limpieza. Alta elasticidad y ajuste anatómico. Resistentes a sustancias químicas y biológicas. Aptos para manipulación de alimentos.",
+  "mainImage": "/uploads/guantes-latex.png",
+  "category": "Higiene y Limpieza",
+  "specs": [
+    { "key": "Material", "value": "Látex Natural" },
+    { "key": "Tallas disponibles", "value": "S, M, L, XL" },
+    { "key": "Con polvo", "value": "No (Sin polvo)" },
+    { "key": "Uso", "value": "Médico, alimentario, limpieza" },
+    { "key": "Presentación", "value": "Caja de 100 unidades" }
+  ],
+  "featured": true
+}

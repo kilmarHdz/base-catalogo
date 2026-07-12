@@ -1,0 +1,15 @@
+{
+  "title": "Contenedor Rectangular con Tapa 750ml",
+  "sku": "ENV-REC-750",
+  "description": "Contenedor rectangular plástico con tapa hermética de cierre a presión. Ideal para el almacenamiento y transporte de alimentos preparados, salsas, ensaladas y postres. Apto para microondas.",
+  "mainImage": "/uploads/contenedor-rectangular-750.png",
+  "category": "Envases y Contenedores",
+  "specs": [
+    { "key": "Material", "value": "Polipropileno (PP)" },
+    { "key": "Capacidad", "value": "750 ml" },
+    { "key": "Apto microondas", "value": "Sí" },
+    { "key": "Sellado", "value": "Cierre hermético a presión" },
+    { "key": "Presentación", "value": "Paquete de 10 unidades" }
+  ],
+  "featured": true
+}

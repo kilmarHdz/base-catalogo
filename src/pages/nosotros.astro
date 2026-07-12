@@ -1,0 +1,117 @@
+---
+import LayoutPrincipal from '../layouts/LayoutPrincipal.astro';
+---
+
+<LayoutPrincipal 
+  title="Sobre Nosotros - Distribuidora de Plásticos y Desechables" 
+  description="Conoce nuestra historia, misión y valores como distribuidora líder de productos plásticos y desechables para el sector HORECA, eventos y comercios."
+>
+  <main class="max-w-5xl mx-auto py-16 px-6 space-y-24">
+
+    <!-- Header -->
+    <header class="text-center max-w-2xl mx-auto space-y-5">
+      <span class="inline-block text-xs font-black tracking-widest uppercase text-brand-accent px-4 py-1.5 bg-brand-accent/10 border border-brand-accent/20 rounded-full">
+        Nuestra Historia
+      </span>
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight text-brand-primary text-balance">
+        Quiénes Somos
+      </h1>
+      <p class="text-brand-secondary text-lg leading-relaxed">
+        Más de una década distribuyendo productos plásticos y desechables de calidad para restaurantes, caterings, eventos y comercios de toda la región.
+      </p>
+    </header>
+
+    <!-- Story section -->
+    <section aria-labelledby="story-heading">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="space-y-5">
+          <h2 id="story-heading" class="text-3xl font-extrabold text-brand-primary leading-tight text-balance">
+            Una empresa con propósito desde el primer día
+          </h2>
+          <p class="text-brand-secondary leading-relaxed">
+            Nacimos para resolver un problema real del sector HORECA: acceder a productos desechables y plásticos de calidad mayorista sin trámites complicados. Desde el primer día, apostamos por la transparencia, la entrega rápida y el asesoramiento honesto.
+          </p>
+          <p class="text-brand-secondary leading-relaxed">
+            Hoy somos referente en la distribución de vasos, platos, cubiertos, envases, bolsas y artículos de higiene. Trabajamos con restaurantes, eventos masivos, hospitales, supermercados y tiendas de conveniencia.
+          </p>
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-brand-border/60">
+            {[
+              { num: "10+", label: "Años de experiencia" },
+              { num: "500+", label: "Clientes activos" },
+              { num: "200+", label: "Productos en catálogo" },
+            ].map(stat => (
+              <div class="text-center">
+                <p class="text-2xl font-black text-brand-accent tabular-nums">{stat.num}</p>
+                <p class="text-[10px] text-brand-secondary font-medium mt-0.5 leading-tight">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Mission & Vision card -->
+        <div class="bg-brand-surface border border-brand-border rounded-2xl p-7 space-y-6 shadow-sm">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-brand-accent/10 flex items-center justify-center text-base" aria-hidden="true">🎯</div>
+              <span class="text-xs font-black uppercase tracking-widest text-brand-accent">Nuestra Misión</span>
+            </div>
+            <p class="text-brand-primary text-sm leading-relaxed">
+              Proveer a nuestros clientes de productos plásticos y desechables con la mejor relación calidad-precio del mercado, garantizando disponibilidad, rapidez y asesoramiento profesional en cada pedido.
+            </p>
+          </div>
+          <hr class="border-brand-border" />
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center text-base" aria-hidden="true">🔭</div>
+              <span class="text-xs font-black uppercase tracking-widest text-purple-500">Nuestra Visión</span>
+            </div>
+            <p class="text-brand-primary text-sm leading-relaxed">
+              Ser la distribuidora de referencia regional, ampliando nuestra oferta hacia materiales biodegradables y empaques sostenibles, sin renunciar a la competitividad de precios que nos distingue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section aria-labelledby="values-heading">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-black tracking-widest uppercase text-brand-accent">Pilares</span>
+        <h2 id="values-heading" class="text-2xl sm:text-3xl font-extrabold text-brand-primary mt-1 text-balance">
+          Valores que nos guían
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        {[
+          { icon: "🏆", color: "bg-amber-500/10 text-amber-500", title: "Calidad Garantizada", desc: "Trabajamos únicamente con fabricantes certificados. Cada producto pasa por controles de calidad antes de llegar a tus manos." },
+          { icon: "⚡", color: "bg-brand-accent/10 text-brand-accent", title: "Entrega Puntual", desc: "Nuestro sistema logístico asegura que tu pedido llegue en el tiempo prometido, sin excusas ni retrasos." },
+          { icon: "🤝", color: "bg-emerald-500/10 text-emerald-500", title: "Trato Personalizado", desc: "No eres un número. Cada cliente tiene un asesor dedicado que conoce sus necesidades y le ofrece las mejores soluciones." },
+        ].map(val => (
+          <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 space-y-3 hover:shadow-md hover:border-brand-accent/20 transition-all duration-300">
+            <div class={`w-10 h-10 rounded-xl ${val.color} flex items-center justify-center text-xl`} aria-hidden="true">{val.icon}</div>
+            <h3 class="font-extrabold text-base text-brand-primary">{val.title}</h3>
+            <p class="text-brand-secondary text-sm leading-relaxed">{val.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center bg-gradient-to-br from-brand-accent/8 to-purple-500/5 border border-brand-border rounded-3xl p-10 space-y-5">
+      <h2 class="text-2xl font-extrabold text-brand-primary text-balance">¿Listo para trabajar juntos?</h2>
+      <p class="text-brand-secondary text-sm max-w-md mx-auto leading-relaxed">Solicita tu cotización personalizada y descubre por qué cientos de empresas confían en nosotros.</p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-accent text-white font-extrabold shadow-lg shadow-brand-accent/25 hover:bg-brand-accent/90 hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
+      >
+        Solicitar Cotización
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </a>
+    </section>
+
+  </main>
+</LayoutPrincipal>

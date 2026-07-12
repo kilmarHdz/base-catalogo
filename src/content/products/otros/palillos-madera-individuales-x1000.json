@@ -1,0 +1,14 @@
+{
+  "title": "Palillos de Madera Individuales x1000",
+  "sku": "OTR-PAL-1K",
+  "description": "Palillos de madera biodegradables, envueltos individualmente en papel. Aptos para uso en restaurantes, pizzerías, sushis, bares y servicio de mesa. Higiénicos y de fácil dispensación.",
+  "mainImage": "/uploads/palillos-madera.png",
+  "category": "Otros",
+  "specs": [
+    { "key": "Material", "value": "Madera de abedul" },
+    { "key": "Envuelto", "value": "Individualmente en papel" },
+    { "key": "Longitud", "value": "6.5 cm" },
+    { "key": "Presentación", "value": "Caja de 1000 unidades" }
+  ],
+  "featured": false
+}

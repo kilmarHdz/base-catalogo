@@ -1,0 +1,46 @@
+---
+import LayoutPrincipal from '../../layouts/LayoutPrincipal.astro';
+import CatalogoFiltros from '../../components/vue/CatalogoFiltros.vue';
+import client from '../../../tina/__generated__/client';
+
+// Fetch all products from the local Git-backed TinaCMS GraphQL client
+const response = await client.queries.productConnection();
+const productos = response.data.productConnection.edges?.map((edge) => edge?.node) || [];
+---
+
+<LayoutPrincipal 
+  title="Catálogo de Productos - Plásticos y Desechables" 
+  description="Catálogo completo de vasos, platos, cubiertos, envases, bolsas y artículos de higiene. Filtra por categoría y encuentra el producto ideal para tu negocio."
+>
+  <main class="max-w-6xl mx-auto py-12 px-6">
+
+    <!-- Page header -->
+    <header class="mb-10">
+      <span class="inline-block text-xs font-black tracking-widest uppercase text-brand-accent px-4 py-1.5 bg-brand-accent/10 border border-brand-accent/20 rounded-full mb-4">
+        Gama Completa
+      </span>
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-black tracking-tight text-brand-primary text-balance">
+            Catálogo de Productos
+          </h1>
+          <p class="text-brand-secondary text-lg mt-2 max-w-xl leading-relaxed">
+            Filtra y busca entre toda nuestra gama. Vasos, platos, cubiertos, envases y más — todo con precios mayoristas.
+          </p>
+        </div>
+        <a
+          href="/contacto"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-accent text-white font-bold text-sm shadow-md shadow-brand-accent/20 hover:bg-brand-accent/90 transition-all duration-200 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
+        >
+          Solicitar Cotización
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Vue island for reactive search, filtering, and listing -->
+    <CatalogoFiltros client:load productos={productos} />
+  </main>
+</LayoutPrincipal>

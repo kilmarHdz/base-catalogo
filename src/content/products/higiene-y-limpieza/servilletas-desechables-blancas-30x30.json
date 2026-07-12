@@ -1,0 +1,15 @@
+{
+  "title": "Servilletas Desechables Blancas 30x30",
+  "sku": "HIG-SER-30",
+  "description": "Servilletas de papel desechables blancas, suaves y resistentes. Tamaño estándar para mesa, ideales para restaurantes, cafeterías, hoteles, comedores industriales y uso doméstico.",
+  "mainImage": "/uploads/servilletas-blancas.png",
+  "category": "Higiene y Limpieza",
+  "specs": [
+    { "key": "Material", "value": "Papel tissue 2 capas" },
+    { "key": "Dimensiones", "value": "30 x 30 cm (doblada)" },
+    { "key": "Color", "value": "Blanco" },
+    { "key": "Capas", "value": "2 capas" },
+    { "key": "Presentación", "value": "Paquete de 200 unidades" }
+  ],
+  "featured": false
+}

@@ -27,7 +27,20 @@ export default defineConfig({
           { type: "string", name: "sku", label: "Código / SKU", required: true },
           { type: "string", name: "description", label: "Descripción Corta", ui: { component: "textarea" } },
           { type: "image", name: "mainImage", label: "Imagen Principal" },
-          { type: "string", name: "category", label: "Categoría", options: ["General"] },
+          {
+            type: "string",
+            name: "category",
+            label: "Categoría",
+            options: [
+              "Vasos y Copas",
+              "Platos y Bandejas",
+              "Cubiertos Desechables",
+              "Envases y Contenedores",
+              "Bolsas y Empaques",
+              "Higiene y Limpieza",
+              "Otros"
+            ]
+          },
           {
             type: "object",
             name: "specs",
