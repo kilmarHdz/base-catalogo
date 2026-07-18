@@ -23,5 +23,30 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-node_modules
+# TinaCMS
 tina/__generated__
+public/admin/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Coverage
+coverage/
+*.lcov
+
+# Logs
+logs/
+*.log
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# OS
+Thumbs.db
+
+# Misc
+.cache/
+*.tsbuildinfo
