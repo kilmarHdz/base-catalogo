@@ -1,0 +1,36 @@
+---
+import LayoutPrincipal from '../layouts/LayoutPrincipal.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import site from '../config/site';
+---
+
+<LayoutPrincipal
+  title={`404 — Página no encontrada | ${site.brand.name}`}
+  description="La página que buscas no existe o ha sido movida."
+>
+  <main class="max-w-3xl mx-auto py-24 px-6 text-center">
+    <div class="inline-flex p-6 bg-brand-surface border border-brand-border rounded-full text-brand-accent mb-8" aria-hidden="true">
+      <span class="text-6xl">🔍</span>
+    </div>
+
+    <span class="block text-xs font-black tracking-widest uppercase text-brand-accent mb-4">Error 404</span>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight text-brand-primary text-balance mb-4">
+      Página no encontrada
+    </h1>
+    <p class="text-brand-secondary text-lg leading-relaxed max-w-md mx-auto mb-10">
+      La ruta que buscas no existe o ha sido movida. Vuelve al inicio o explora nuestro catálogo.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-3">
+      <Button variant="primary" size="lg" href="/">
+        <Icon name="chevron-left" class="w-4 h-4" />
+        Volver al inicio
+      </Button>
+      <Button variant="secondary" size="lg" href="/productos">
+        Ver catálogo
+        <Icon name="chevron-right" class="w-4 h-4" />
+      </Button>
+    </div>
+  </main>
+</LayoutPrincipal>
