@@ -5,9 +5,16 @@
     "**/*"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "node_modules",
+    "public/admin",
+    "tina/__generated__",
+    "tests/e2e",
+    "vitest.config.ts",
+    "playwright.config.ts"
   ],
   "compilerOptions": {
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "skipLibCheck": true
   }
 }

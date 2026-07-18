@@ -1,18 +1,31 @@
 {
   "name": "base-catalogo",
+  "version": "0.1.0",
+  "description": "Boilerplate de catálogo digital con Astro 7, Vue 3, TinaCMS y Tailwind v4. Auto-gestionado, accesible, con i18n, testing y deploy a Cloudflare Pages listo para usar.",
   "type": "module",
-  "version": "0.0.1",
+  "license": "MIT",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.12.0",
+    "pnpm": ">=9"
   },
   "scripts": {
     "dev": "pnpm exec tinacms dev -c \"pnpm exec astro dev\"",
-    "build": "pnpm exec tinacms build && pnpm exec astro build",
+    "tina:build": "pnpm exec tinacms build --local --skip-cloud-checks",
+    "build": "pnpm exec tinacms build --local --skip-cloud-checks && pnpm exec astro build",
+    "build:ci": "bash ./scripts/build-with-tina.sh",
     "preview": "pnpm exec astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "astro check && tsc --noEmit --skipLibCheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "pnpm run test:unit && pnpm run test:e2e",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "@astrojs/node": "^11.0.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vue": "^7.0.1",
     "@tailwindcss/vite": "^4.3.2",
     "@tinacms/astro": "^0.5.1",
@@ -22,6 +35,31 @@
     "vue": "^3.5.39"
   },
   "devDependencies": {
-    "@tinacms/cli": "^2.5.3"
+    "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.61.1",
+    "@tinacms/cli": "^2.5.3",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/test-utils": "^2.4.11",
+    "happy-dom": "^20.10.6",
+    "prettier": "^3.9.5",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "keywords": [
+    "astro",
+    "vue",
+    "tina-cms",
+    "tailwindcss",
+    "boilerplate",
+    "template",
+    "catalog",
+    "static-site",
+    "ssg",
+    "cloudflare-pages",
+    "typescript"
+  ],
+  "author": {
+    "name": "Roberto Cabrera"
   }
 }
