@@ -1,73 +1,53 @@
 ---
 import ThemeToggle from './vue/ThemeToggle.vue';
+import Icon from './Icon.astro';
+import site from '../config/site';
 ---
 
-<!-- CSS-Only Hamburger Menu Checkbox (Outside to control both header and mobile menu siblings) -->
 <input type="checkbox" id="menu-toggle" class="peer hidden" />
 
-<!-- Floating Navbar Island -->
-<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 h-16 border border-brand-border bg-brand-surface/75 backdrop-blur-lg rounded-2xl shadow-lg shadow-brand-accent/5 flex items-center justify-between px-6 transition-all duration-300">
-  
-  <!-- Brand Logo -->
-  <a href="/" class="flex items-center gap-3 group">
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 h-16 border border-brand-border bg-brand-surface/85 dark:bg-brand-surface/90 backdrop-blur-lg rounded-2xl shadow-lg shadow-brand-accent/5 flex items-center justify-between px-6 transition-all duration-300">
+
+  <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50 rounded-lg">
     <div class="w-8 h-8 rounded-lg bg-brand-accent flex items-center justify-center text-white font-black tracking-wider text-sm shadow-md shadow-brand-accent/30 group-hover:scale-105 transition-transform duration-200">
-      C
+      {site.brand.shortName}
     </div>
-    <span class="font-extrabold text-lg tracking-tight text-brand-primary">Catálogo Base</span>
+    <span class="font-extrabold text-lg tracking-tight text-brand-primary">{site.brand.name}</span>
   </a>
 
-  <!-- Desktop Navigation Menu -->
-  <nav class="hidden md:flex items-center gap-8">
-    <a href="/" class="text-sm font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200">
-      Inicio
-    </a>
-    <a href="/productos" class="text-sm font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200">
-      Productos
-    </a>
-    <a href="/nosotros" class="text-sm font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200">
-      Nosotros
-    </a>
-    <a href="/contacto" class="text-sm font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200">
-      Contacto
-    </a>
+  <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+    {site.navLinks.map(link => (
+      <a
+        href={link.href}
+        class="text-sm font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50 rounded"
+      >
+        {link.label}
+      </a>
+    ))}
   </nav>
 
-  <!-- Theme Toggle & Mobile Button Group -->
   <div class="flex items-center gap-4">
-    <!-- Theme Toggle (Always visible) -->
-    <ThemeToggle client:load />
-
-    <!-- Hamburger Toggle Button (Visible on Mobile) -->
+    <ThemeToggle client:load transition:persist="theme-toggle" />
     <label
       for="menu-toggle"
-      class="cursor-pointer p-2 rounded-xl border border-brand-border hover:bg-brand-background text-brand-primary md:hidden block transition-all duration-200 select-none active:scale-95"
+      aria-label="Abrir menú"
+      class="cursor-pointer p-2 rounded-xl border border-brand-border hover:bg-brand-background text-brand-primary md:hidden block transition-all duration-200 select-none active:scale-95 focus-within:ring-2 focus-within:ring-brand-accent/50"
     >
-      <!-- Hamburger Icon (Hidden when checkbox checked) -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 peer-checked:hidden block">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
+      <Icon name="menu" class="w-5 h-5 peer-checked:hidden block" />
     </label>
   </div>
-
 </header>
 
-<!-- Mobile Navigation Menu Floating Island (Controlled by checkbox peer) -->
-<nav class="
-  fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-40
-  hidden peer-checked:flex flex-col gap-4 p-6 
-  border border-brand-border bg-brand-surface/90 backdrop-blur-xl rounded-2xl shadow-2xl md:hidden
-  animate-in fade-in slide-in-from-top-4 duration-300
-">
-  <a href="/" class="text-base font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 py-2 border-b border-brand-border/40">
-    Inicio
-  </a>
-  <a href="/productos" class="text-base font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 py-2 border-b border-brand-border/40">
-    Productos
-  </a>
-  <a href="/nosotros" class="text-base font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 py-2 border-b border-brand-border/40">
-    Nosotros
-  </a>
-  <a href="/contacto" class="text-base font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 py-2">
-    Contacto
-  </a>
+<nav
+  aria-label="Navegación móvil"
+  class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-40 hidden peer-checked:flex flex-col gap-4 p-6 border border-brand-border bg-brand-surface/90 backdrop-blur-xl rounded-2xl shadow-2xl md:hidden"
+>
+  {site.navLinks.map(link => (
+    <a
+      href={link.href}
+      class="text-base font-bold text-brand-secondary hover:text-brand-accent transition-colors duration-200 py-2 border-b border-brand-border/40 last:border-b-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/50 rounded"
+    >
+      {link.label}
+    </a>
+  ))}
 </nav>

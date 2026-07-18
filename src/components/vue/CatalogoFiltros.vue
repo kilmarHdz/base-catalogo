@@ -1,29 +1,13 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { addToCart } from '../../lib/cartStore';
-
-interface Spec {
-  key?: string | null;
-  value?: string | null;
-}
-
-interface ProductNode {
-  title: string;
-  sku: string;
-  description?: string | null;
-  mainImage?: string | null;
-  category?: string | null;
-  specs?: Spec[] | null;
-  featured?: boolean | null;
-  _sys: {
-    filename: string;
-    relativePath: string;
-  };
-}
+import { ref, computed, watch } from 'vue';
+import { useCart } from '../../composables/useCart';
+import { productSlug, type Product } from '../../types/product';
 
 const props = defineProps<{
-  productos: ProductNode[];
+  productos: Product[];
 }>();
+
+const { addItem } = useCart();
 
 // ─── Filters ──────────────────────────────────────────────────────────
 const searchQuery = ref('');
@@ -52,8 +36,6 @@ const filteredProducts = computed(() => {
 const PAGE_SIZE = 6;
 const currentPage = ref(1);
 
-// Reset page to 1 whenever filters change
-import { watch } from 'vue';
 watch([searchQuery, selectedCategory, onlyFeatured], () => {
   currentPage.value = 1;
 });
@@ -88,8 +70,8 @@ const visiblePages = computed(() => {
 // ─── Cart ──────────────────────────────────────────────────────────────
 const addedSku = ref<string | null>(null);
 
-const triggerAddToCart = (producto: ProductNode) => {
-  addToCart({
+const triggerAddToCart = (producto: Product) => {
+  addItem({
     title: producto.title,
     sku: producto.sku,
     mainImage: producto.mainImage,
@@ -229,7 +211,7 @@ const triggerAddToCart = (producto: ProductNode) => {
 
               <!-- View Detail -->
               <a
-                :href="`/productos/${producto._sys.relativePath.replace(/\.json$/, '')}`"
+                :href="`/productos/${productSlug(producto)}`"
                 class="inline-flex items-center gap-1 text-xs font-bold text-brand-accent hover:text-brand-accent/70 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-brand-accent/50 focus-visible:outline-none rounded"
               >
                 Ver ficha

@@ -1,0 +1,25 @@
+---
+type Variant = 'category' | 'featured' | 'tag';
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+}
+
+const { variant = 'category', class: className = '' } = Astro.props;
+
+const variantClasses: Record<Variant, string> = {
+  category:
+    'absolute bottom-3 right-3 bg-brand-surface/80 backdrop-blur-sm text-brand-accent text-[9px] font-black tracking-widest uppercase px-2.5 py-1 rounded-md border border-brand-border/50',
+  featured:
+    'absolute top-3 left-3 bg-amber-400 text-amber-900 text-[10px] font-black tracking-wider uppercase px-2 py-1 rounded-md shadow-sm',
+  tag:
+    'inline-block text-xs font-black tracking-widest uppercase text-brand-accent bg-brand-accent/10 border border-brand-accent/20 rounded-full',
+};
+
+const finalClass = [variantClasses[variant], className].filter(Boolean).join(' ');
+---
+
+<span class={finalClass}>
+  <slot />
+</span>
