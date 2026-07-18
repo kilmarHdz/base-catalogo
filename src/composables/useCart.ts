@@ -12,7 +12,7 @@
  * desde localStorage ocurre en el primer acceso en el cliente.
  */
 
-import { ref, computed, watch, readonly, type Ref, type ComputedRef } from 'vue';
+import { ref, computed, watch, readonly, onMounted, type Ref, type ComputedRef } from 'vue';
 import { useToasts } from './useToasts';
 
 export interface CartItem {
@@ -26,6 +26,7 @@ export interface CartItem {
 const STORAGE_KEY = 'cart';
 
 const cart: Ref<CartItem[]> = ref([]);
+const isOpen: Ref<boolean> = ref(false);
 let initialized = false;
 
 function initFromStorage(): void {
@@ -59,7 +60,11 @@ function initFromStorage(): void {
 }
 
 export function useCart() {
-  initFromStorage();
+  // Se difiere a onMounted para que el primer render en cliente coincida
+  // con el SSR (carrito vacío) y evite mismatches de hidratación.
+  onMounted(() => {
+    initFromStorage();
+  });
 
   const { push: pushToast } = useToasts();
 
@@ -98,12 +103,28 @@ export function useCart() {
     cart.value.reduce((total, item) => total + item.quantity, 0)
   );
 
+  function openDrawer(): void {
+    isOpen.value = true;
+  }
+
+  function closeDrawer(): void {
+    isOpen.value = false;
+  }
+
+  function toggleDrawer(): void {
+    isOpen.value = !isOpen.value;
+  }
+
   return {
     items: readonly(cart),
     count,
+    isOpen,
     addItem,
     removeItem,
     updateQuantity,
     clear,
+    openDrawer,
+    closeDrawer,
+    toggleDrawer,
   };
 }

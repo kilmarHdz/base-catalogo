@@ -17,8 +17,10 @@ export type ProductSpec = NonNullable<Product['specs']>[number];
 /** Vista simplificada de un producto para grids/cards (sin metadatos Tina). */
 export type ProductCard = Pick<
   Product,
-  'title' | 'sku' | 'description' | 'mainImage' | 'category' | 'featured' | 'specs' | '_sys'
->;
+  'title' | 'sku' | 'description' | 'mainImage' | 'category' | 'featured' | 'specs'
+> & {
+  _sys: Pick<Product['_sys'], 'relativePath'>;
+};
 
 /** Vista completa de un producto para la ficha de detalle. */
 export type ProductDetail = Product;

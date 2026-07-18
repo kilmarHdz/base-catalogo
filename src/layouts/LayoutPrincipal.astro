@@ -4,7 +4,6 @@ import { ClientRouter } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
-import CartDrawer from '../components/vue/CartDrawer.vue';
 import site from '../config/site';
 
 interface Props {
@@ -46,13 +45,30 @@ const orgJsonLd = {
     <JsonLd data={orgJsonLd} />
 
     <script is:inline>
-      const getTheme = () => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+      // Patrón oficial de Astro para dark mode con View Transitions
+      // (https://docs.astro.build/en/guides/view-transitions/#script-behavior-with-view-transitions).
+      // Se ejecuta una vez en la primera carga y queda escuchando
+      // 'astro:after-swap' para reaplicar el tema después de cada
+      // navegación SPA, evitando el flash de light mode.
+      function applyTheme() {
+        try {
+          const theme = localStorage.getItem('theme');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (theme === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            // Sin preferencia guardada: respetar prefers-color-scheme
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', prefersDark);
+          }
+        } catch (e) {
+          // localStorage no disponible (modo privado, etc.)
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-      if (getTheme() === 'dark') document.documentElement.classList.add('dark');
+      }
+
+      document.addEventListener('astro:after-swap', applyTheme);
+      applyTheme();
     </script>
   </head>
   <body class="bg-brand-background text-brand-primary min-h-screen flex flex-col justify-between transition-colors duration-300">
@@ -64,10 +80,9 @@ const orgJsonLd = {
     </a>
 
     <Navbar />
-    <main id="main-content" tabindex="-1" class="flex-grow pt-28">
+    <div id="main-content" tabindex="-1" class="grow">
       <slot />
-    </main>
+    </div>
     <Footer />
-    <CartDrawer client:load transition:persist="cart-drawer" />
   </body>
 </html>
