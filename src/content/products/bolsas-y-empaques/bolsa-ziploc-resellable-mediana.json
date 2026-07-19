@@ -2,14 +2,29 @@
   "title": "Bolsa Ziploc Resellable Mediana",
   "sku": "BOL-ZIP-MED",
   "description": "Bolsa plástica transparente con cierre resellable tipo zipper. Ideal para conservar alimentos, organizar artículos, almacenamiento doméstico o industrial. Resiste humedad y evita derrames.",
-  "mainImage": "/uploads/bolsa-ziploc-mediana.png",
+  "mainImage": "/uploads/bolsa-ziplock.jpg",
   "category": "Bolsas y Empaques",
   "specs": [
-    { "key": "Material", "value": "Polietileno (LDPE)" },
-    { "key": "Dimensiones", "value": "20 x 17 cm" },
-    { "key": "Cierre", "value": "Zipper resellable" },
-    { "key": "Color", "value": "Transparente" },
-    { "key": "Presentación", "value": "Paquete de 50 unidades" }
+    {
+      "key": "Material",
+      "value": "Polietileno (LDPE)"
+    },
+    {
+      "key": "Dimensiones",
+      "value": "20 x 17 cm"
+    },
+    {
+      "key": "Cierre",
+      "value": "Zipper resellable"
+    },
+    {
+      "key": "Color",
+      "value": "Transparente"
+    },
+    {
+      "key": "Presentación",
+      "value": "Paquete de 50 unidades"
+    }
   ],
   "featured": false
 }
