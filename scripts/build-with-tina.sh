@@ -19,7 +19,10 @@ cleanup() {
 trap cleanup EXIT
 
 echo "▶  Generando cliente Tina (modo local)..."
-pnpm exec tinacms build --local --skip-cloud-checks
+# La indexación local de Tina es intensiva en memoria y agota el heap por
+# defecto de Node en contenedores de build con RAM limitada (p. ej. Cloudflare
+# Pages). Se sube el límite del heap solo para este paso.
+NODE_OPTIONS="--max-old-space-size=6144" pnpm exec tinacms build --local --skip-cloud-checks
 
 echo "▶  Levantando Tina GraphQL server en :4001..."
 pnpm exec tinacms dev >/tmp/tina-build.log 2>&1 &
