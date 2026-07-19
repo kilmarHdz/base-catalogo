@@ -10,8 +10,8 @@
   },
   "scripts": {
     "dev": "pnpm exec tinacms dev -c \"pnpm exec astro dev\"",
-    "tina:build": "pnpm exec tinacms build --local --skip-cloud-checks",
-    "build": "pnpm exec tinacms build --local --skip-cloud-checks && pnpm exec astro build",
+    "tina:build": "NODE_OPTIONS=--max-old-space-size=6144 pnpm exec tinacms build --local --skip-cloud-checks",
+    "build": "NODE_OPTIONS=--max-old-space-size=6144 pnpm exec tinacms build --local --skip-cloud-checks && pnpm exec astro build",
     "build:ci": "bash ./scripts/build-with-tina.sh",
     "preview": "pnpm exec astro preview",
     "astro": "astro",
