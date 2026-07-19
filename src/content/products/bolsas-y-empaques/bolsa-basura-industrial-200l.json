@@ -2,14 +2,29 @@
   "title": "Bolsa para Basura Industrial 200 Litros",
   "sku": "BOL-BAS-200",
   "description": "Bolsa de basura de alta resistencia para uso industrial y comercial. Gruesa, resistente a perforaciones y derrames. Ideal para talleres, bodegas, mercados, hospitales y grandes comercios.",
-  "mainImage": "/uploads/bolsa-basura-industrial.png",
+  "mainImage": "/uploads/bolsa-basura.jpg",
   "category": "Bolsas y Empaques",
   "specs": [
-    { "key": "Material", "value": "Polietileno Alta Densidad (HDPE)" },
-    { "key": "Capacidad", "value": "200 Litros" },
-    { "key": "Espesor", "value": "80 micras" },
-    { "key": "Color", "value": "Negro" },
-    { "key": "Presentación", "value": "Rollo de 10 unidades" }
+    {
+      "key": "Material",
+      "value": "Polietileno Alta Densidad (HDPE)"
+    },
+    {
+      "key": "Capacidad",
+      "value": "200 Litros"
+    },
+    {
+      "key": "Espesor",
+      "value": "80 micras"
+    },
+    {
+      "key": "Color",
+      "value": "Negro"
+    },
+    {
+      "key": "Presentación",
+      "value": "Rollo de 10 unidades"
+    }
   ],
   "featured": false
 }
